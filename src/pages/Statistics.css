@@ -1,0 +1,17 @@
+.statistics {
+    padding: 20px;
+}
+
+.group-selector {
+    margin-bottom: 20px;
+}
+
+.group-selector label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#group-select {
+    padding: 5px;
+    font-size: 16px;
+}

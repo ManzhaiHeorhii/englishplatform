@@ -1,0 +1,130 @@
+.dashboard {
+    display: flex;
+    height: 100vh; /* Займає всю висоту вікна */
+    width: 100vw;  /* Займає всю ширину вікна */
+    overflow: hidden; /* Уникнення скролів, якщо контент виходить за межі */
+}
+
+.dashboard-menu {
+    width: 20%; /* Ліва панель займає 20% ширини */
+    background-color: #8b9a5b; /* Колір хакі */
+    padding: 20px;
+    border-right: 2px solid #fdd835; /* Жовта лінія між панелями */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-menu li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    color: white; /* Текст білий за замовчуванням */
+}
+
+.dashboard-menu li:hover {
+    background-color: #fdd835; /* Жовтий при наведенні */
+    color: #000; /* Чорний текст при наведенні */
+}
+
+.dashboard-menu .active {
+    background-color: #fdd835; /* Жовтий для активного пункту */
+    color: #000; /* Чорний текст для активного пункту */
+}
+
+.dashboard-content {
+    flex-grow: 1; /* Займає весь залишок простору правої частини */
+    background-color: #f0f0f0; /* Світлий фон для правої частини */
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Вирівнюємо контент по вертикалі */
+    justify-content: center; /* Вирівнюємо контент по горизонталі */
+}
+
+.content-container {
+    background-color: white; /* Білий фон для контейнера вмісту */
+    width: 80%; /* Контейнер займає 80% ширини правої частини */
+    min-height: 80%; /* Контейнер займає мінімум 80% висоти */
+    border-radius: 10px; /* Закруглені краї */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    padding: 20px; /* Відступи всередині контейнера */
+    overflow-y: auto; /* Скрол всередині контейнера, якщо контент перевищує висоту */
+    border: 2px solid #fdd835; /* Жовта рамка навколо контейнера */
+}
+
+/* Блок користувача у верхній частині меню */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #fdd835; /* Жовта лінія для розділення */
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: white; /* Білий колір для порожнього аватара */
+    border: 2px solid #fdd835; /* Жовта рамка */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.logout-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #fdd835; /* Жовтий колір для кнопки */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #e6c300; /* Темніший жовтий при наведенні */
+}
+
+/* Таблиця курсів */
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.courses-table th,
+.courses-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.courses-table th {
+    background-color: #fdd835; /* Жовтий колір заголовків */
+    color: #000; /* Чорний текст у заголовках */
+    font-weight: bold;
+}
+
+.courses-table tr:hover {
+    background-color: #f5f5f5; /* Світло-сірий при наведенні */
+}

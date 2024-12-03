@@ -1,0 +1,53 @@
+.audition {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.audition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.audition-table th,
+.audition-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.audition-table th {
+    background-color: #fdd835; /* Жовтий */
+    color: #000;
+}
+
+.audition-table tr:hover {
+    background-color: #f5f5f5; /* Світло-сірий */
+}
+.audition {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.audition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.audition-table th,
+.audition-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.audition-table th {
+    background-color: #fdd835; /* Жовтий */
+    color: #000;
+}
+
+.audition-table tr:hover {
+    background-color: #f5f5f5; /* Світло-сірий */
+    cursor: pointer;
+}

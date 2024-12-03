@@ -1,0 +1,120 @@
+.task-preview {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #e6c300;
+}
+
+.media-container {
+    margin: 20px 0;
+}
+
+.media-container video,
+.media-container audio {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.description h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.task-preview {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.back-button,
+.edit-button,
+.save-button {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-button:hover,
+.edit-button:hover,
+.save-button:hover {
+    background-color: #e6c300;
+}
+
+.media-container {
+    margin: 20px 0;
+}
+
+.media-container video,
+.media-container audio {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.description h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.name-input,
+.description-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.description-input {
+    height: 100px;
+    resize: none;
+}
+.delete-button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}

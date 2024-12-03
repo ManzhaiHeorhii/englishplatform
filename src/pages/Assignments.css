@@ -1,0 +1,28 @@
+.assignments {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.assignment-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.assignment-controls select,
+.assignment-controls button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.assignment-controls button {
+    background-color: #fdd835;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.assignment-controls button:hover {
+    background-color: #e6c300;
+}

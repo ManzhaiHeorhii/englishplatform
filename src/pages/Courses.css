@@ -1,0 +1,43 @@
+.courses-table,
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.courses-table th,
+.courses-table td,
+.tasks-table th,
+.tasks-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.courses-table th,
+.tasks-table th {
+    background-color: #fdd835; /* Жовтий */
+    color: #000;
+}
+
+.courses-table tr:hover,
+.tasks-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.back-button,
+.create-task-button {
+    margin: 10px 10px 20px 0;
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-button:hover,
+.create-task-button:hover {
+    background-color: #e6c300;
+}

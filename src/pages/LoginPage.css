@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+     /* Замість `/path/to/your/image.jpg` вкажіть шлях до картинки */
+     /* Масштабування картинки */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.login-header {
+    margin-bottom: 20px;
+}
+
+.login-header h1 {
+    font-size: 36px;
+    color: #fff; /* Білий колір для контрасту */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Легкий тіньовий ефект */
+    font-weight: bold;
+}
+
+.login-box {
+    background-color: white;
+    border: 2px solid #708238; /* Хакі */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #708238; /* Хакі */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    color: #708238; /* Хакі */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ffd700; /* Жовтий */
+    box-shadow: 0 0 5px #ffd700;
+}
+
+.login-button {
+    background-color: #ffd700; /* Жовтий */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #f0c300; /* Темніший жовтий */
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

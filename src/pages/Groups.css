@@ -1,0 +1,115 @@
+.groups {
+    width: 100%;
+}
+
+.groups-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.groups-table th,
+.groups-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.groups-table th {
+    background-color: #fdd835; /* Жовтий колір для заголовка */
+    color: #000;
+}
+
+.groups-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.groups-table tr:hover {
+    background-color: #f1f1f1;
+}
+.back-button {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #fdd835; /* Жовтий */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #e6c300; /* Темніший жовтий */
+}
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.students-table th,
+.students-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.students-table th {
+    background-color: #fdd835; /* Жовтий фон заголовка */
+    color: #000;
+}
+
+.students-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.students-table tr:hover {
+    background-color: #f1f1f1;
+}
+.group-actions {
+    margin-bottom: 20px;
+}
+
+.group-actions input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.group-actions button {
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-actions button:hover {
+    background-color: #e6c300;
+}
+
+.edit-group {
+    margin-top: 20px;
+}
+
+.edit-group input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-group button {
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-group button:hover {
+    background-color: #e6c300;
+}

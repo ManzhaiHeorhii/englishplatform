@@ -1,0 +1,55 @@
+.task-create {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.back-button,
+.submit-button {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #fdd835;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-button:hover,
+.submit-button:hover {
+    background-color: #e6c300;
+}
+
+.drop-zone {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.drop-zone p {
+    margin: 0;
+    color: #666;
+}
+
+.description-input {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+}
+.name-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}

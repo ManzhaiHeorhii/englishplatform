@@ -1,0 +1,60 @@
+.grades {
+    padding: 20px;
+}
+
+.grades h2 {
+    margin-bottom: 20px;
+    color: #8b9a5b;
+}
+
+.grades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course-item {
+    background-color: #f9f9f9;
+    border: 2px solid #fdd835;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.course-item:hover {
+    background-color: #fff8e1;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.tasks-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.tasks-table th,
+.tasks-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tasks-table th {
+    background-color: #fdd835;
+    color: black;
+}
+
+.tasks-table td {
+    background-color: #fff;
+}
