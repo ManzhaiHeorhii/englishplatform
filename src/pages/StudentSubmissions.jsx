@@ -10,7 +10,7 @@ const StudentSubmissions = ({ groupId, courseId, onBack }) => {
     const fetchSubmissions = async () => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/teacher/submissions?group_id=${groupId}&course_id=${courseId}`
+                `/api/teacher/submissions?group_id=${groupId}&course_id=${courseId}`
             );
             const result = await response.json();
 

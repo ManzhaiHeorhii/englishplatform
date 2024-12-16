@@ -14,7 +14,7 @@ const StudentDashboard = () => {
         const fetchAvailableCourses = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/student/available-courses?student_id=${auth.id}`
+                    `/api/student/available-courses?student_id=${auth.id}`
                 );
                 const data = await response.json();
                 setAvailableCourses(data);

@@ -28,7 +28,7 @@ const TaskPreview = ({ task, onBack, onUpdateTask, onDeleteTask }) => {
         setLoading(true);
 
         try {
-            const response = await fetch(`http://localhost:5000/api/tasks/${task.task_id}`, {
+            const response = await fetch(`/api/tasks/${task.task_id}`, {
                 method: "DELETE",
             });
 
@@ -57,7 +57,7 @@ const TaskPreview = ({ task, onBack, onUpdateTask, onDeleteTask }) => {
                 const formData = new FormData();
                 formData.append("file", file);
 
-                const fileResponse = await fetch("http://localhost:5000/api/upload", {
+                const fileResponse = await fetch("/api/upload", {
                     method: "POST",
                     body: formData,
                 });
@@ -72,7 +72,7 @@ const TaskPreview = ({ task, onBack, onUpdateTask, onDeleteTask }) => {
                 media: mediaUrl,
             };
 
-            const response = await fetch(`http://localhost:5000/api/tasks/${task.task_id}`, {
+            const response = await fetch(`/api/tasks/${task.task_id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ task_content: updatedContent }),

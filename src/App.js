@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import AuthProvider from "./context/AuthContext";
@@ -6,12 +5,12 @@ import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
-import "./App.css"
 import TeacherDashboard from "./pages/TeacherDashboard";
+import "./App.css";
 
 function App() {
     return (
-        <AuthProvider className="auth">
+        <AuthProvider>
             <Router>
                 <Routes>
                     {/* Сторінка авторизації */}
@@ -19,7 +18,7 @@ function App() {
 
                     {/* Захищені маршрути */}
                     <Route
-                        path="/admin"
+                        path="/admin/*"
                         element={
                             <ProtectedRoute allowedRoles={["admin"]}>
                                 <AdminDashboard />
@@ -27,7 +26,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/teacher"
+                        path="/teacher/*"
                         element={
                             <ProtectedRoute allowedRoles={["teacher"]}>
                                 <TeacherDashboard />
@@ -35,7 +34,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/student"
+                        path="/student/*"
                         element={
                             <ProtectedRoute allowedRoles={["student"]}>
                                 <StudentDashboard />
@@ -44,10 +43,7 @@ function App() {
                     />
 
                     {/* Маршрут за замовчуванням */}
-                    <Route path="*" element={
-
-                        <Navigate to="/login" />
-                    } />
+                    <Route path="*" element={<Navigate to="/login" replace />} />
                 </Routes>
             </Router>
         </AuthProvider>

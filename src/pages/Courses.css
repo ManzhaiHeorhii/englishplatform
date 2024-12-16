@@ -41,3 +41,139 @@
 .create-task-button:hover {
     background-color: #e6c300;
 }
+/* Загальний стиль для контейнера */
+.courses {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки */
+.courses h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Кнопки */
+button {
+    background-color: #6f7e46;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6c7a45;
+}
+
+button.back-button {
+    background-color: #6c757d;
+}
+
+button.back-button:hover {
+    background-color: #5a6268;
+}
+
+button.create-task-button {
+    margin-left: 10px;
+}
+
+/* Таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #f44336;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+table th {
+    font-size: 16px;
+}
+
+table td {
+    font-size: 14px;
+    color: #333;
+}
+
+table .actions {
+    text-align: center;
+}
+
+/* Поле для введення нового курсу */
+.add-course {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-course input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-course input:focus {
+    border-color: #6f7e46;
+    outline: none;
+    box-shadow: 0 0 5px rgb(111, 126, 70);
+}
+
+/* Повідомлення, коли немає курсів або завдань */
+.courses .no-data-message,
+.courses .loading-message {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    table th, table td {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .add-course input {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

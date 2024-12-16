@@ -13,7 +13,7 @@ const Assignments = () => {
         // Завантаження груп з сервера
         const fetchGroups = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/groups?teacher_id=${auth.id}`);
+                const response = await fetch(`/api/groups?teacher_id=${auth.id}`);
                 const data = await response.json();
                 setGroups(data);
             } catch (error) {
@@ -24,7 +24,7 @@ const Assignments = () => {
         // Завантаження курсів з сервера
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/courses?teacher_id=${auth.id}`);
+                const response = await fetch(`/api/courses?teacher_id=${auth.id}`);
                 const data = await response.json();
                 setCourses(data);
             } catch (error) {
@@ -43,7 +43,7 @@ const Assignments = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/assignments", {
+            const response = await fetch("/api/assignments", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

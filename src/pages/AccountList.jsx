@@ -9,7 +9,7 @@ const AccountList = () => {
     useEffect(() => {
         const fetchAccounts = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/admin/accounts");
+                const response = await fetch("/api/admin/accounts");
                 const data = await response.json();
                 setAccounts(data);
             } catch (error) {
@@ -24,7 +24,7 @@ const AccountList = () => {
 
     const handleAddUser = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/accounts", {
+            const response = await fetch("/api/admin/accounts", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newUser),
@@ -39,7 +39,7 @@ const AccountList = () => {
 
     const handleDeleteUser = async (userId) => {
         try {
-            await fetch(`http://localhost:5000/api/admin/accounts/${userId}`, {
+            await fetch(`/api/admin/accounts/${userId}`, {
                 method: "DELETE",
             });
             setAccounts((prev) => prev.filter((account) => account.user_id !== userId));

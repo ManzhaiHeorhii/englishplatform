@@ -14,7 +14,7 @@ const Groups = () => {
         const fetchGroups = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/groups?teacher_id=${auth.id}`
+                    `/api/groups?teacher_id=${auth.id}`
                 );
                 const data = await response.json();
                 setGroups(data);
@@ -32,7 +32,7 @@ const Groups = () => {
         setLoadingStudents(true);
         try {
             const response = await fetch(
-                `http://localhost:5000/api/students?group_id=${groupId}`
+                `/api/students?group_id=${groupId}`
             );
             const data = await response.json();
             setStudents(data);

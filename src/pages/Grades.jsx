@@ -12,7 +12,7 @@ const Grades = () => {
         const fetchGrades = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/student/grades?student_id=${auth.id}`
+                    `/api/student/grades?student_id=${auth.id}`
                 );
                 const data = await response.json();
                 setCourses(data);

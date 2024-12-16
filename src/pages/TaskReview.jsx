@@ -11,7 +11,7 @@ const TaskReview = ({ studentId, courseId, onBack }) => {
         const fetchTasks = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/teacher/review-tasks?student_id=${studentId}&course_id=${courseId}`
+                    `/api/teacher/review-tasks?student_id=${studentId}&course_id=${courseId}`
                 );
                 const data = await response.json();
                 setTasks(data);
@@ -34,7 +34,7 @@ const TaskReview = ({ studentId, courseId, onBack }) => {
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/teacher/submit-grades", {
+            const response = await fetch("/api/teacher/submit-grades", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

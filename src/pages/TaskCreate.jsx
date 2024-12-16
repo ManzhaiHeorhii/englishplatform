@@ -38,7 +38,7 @@ const TaskCreate = ({ onBack, courseId, onTaskCreated }) => {
                 const formData = new FormData();
                 formData.append("file", file);
 
-                const fileResponse = await fetch("http://localhost:5000/api/upload", {
+                const fileResponse = await fetch("/api/upload", {
                     method: "POST",
                     body: formData,
                 });
@@ -54,7 +54,7 @@ const TaskCreate = ({ onBack, courseId, onTaskCreated }) => {
                 description: description.trim(),
             });
 
-            const response = await fetch("http://localhost:5000/api/tasks", {
+            const response = await fetch("/api/tasks", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -65,7 +65,7 @@ const TaskCreate = ({ onBack, courseId, onTaskCreated }) => {
 
             if (response.ok) {
                 const newTask = await response.json();
-                onTaskCreated(newTask); // Викликаємо функцію оновлення таблиці
+                //onTaskCreated(newTask); // Викликаємо функцію оновлення таблиці
                 alert("Task created successfully!");
                 setName("");
                 setDescription("");

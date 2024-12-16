@@ -16,9 +16,9 @@ const GroupAssignments = () => {
         const fetchData = async () => {
             try {
                 const [groupsResponse, teachersResponse, studentsResponse] = await Promise.all([
-                    fetch("http://localhost:5000/api/admin/groups"),
-                    fetch("http://localhost:5000/api/admin/teachers"),
-                    fetch("http://localhost:5000/api/admin/students"),
+                    fetch("/api/admin/groups"),
+                    fetch("/api/admin/teachers"),
+                    fetch("/api/admin/students"),
                 ]);
                 const groupsData = await groupsResponse.json();
                 const teachersData = await teachersResponse.json();
@@ -43,7 +43,7 @@ const GroupAssignments = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/admin/groups", {
+            const response = await fetch("/api/admin/groups", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -67,7 +67,7 @@ const GroupAssignments = () => {
         }
 
         try {
-            await fetch("http://localhost:5000/api/admin/assign-student", {
+            await fetch("/api/admin/assign-student", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -87,7 +87,7 @@ const GroupAssignments = () => {
         } else {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/admin/group-students?group_id=${groupId}`
+                    `/api/admin/group-students?group_id=${groupId}`
                 );
                 const data = await response.json();
                 setGroups((prevGroups) =>

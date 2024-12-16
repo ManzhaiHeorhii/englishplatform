@@ -18,7 +18,7 @@ const Statistics = () => {
         // Fetch groups for the dropdown
         const fetchGroups = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/teacher/groups?teacher_id=${auth.id}`);
+                const response = await fetch(`/api/teacher/groups?teacher_id=${auth.id}`);
                 const data = await response.json();
                 setGroups(data);
             } catch (error) {
@@ -39,7 +39,7 @@ const Statistics = () => {
             setLoading(true);
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/teacher/statistics?group_id=${selectedGroup}`
+                    `/api/teacher/statistics?group_id=${selectedGroup}`
                 );
                 const data = await response.json();
                 setStudentPerformance(data);

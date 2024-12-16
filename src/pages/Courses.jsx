@@ -9,6 +9,7 @@ const Courses = () => {
     const [tasks, setTasks] = useState([]);
     const [selectedCourse, setSelectedCourse] = useState(null);
     const [selectedTask, setSelectedTask] = useState(null); // Для прев'ю завдання
+    const [newCourseName, setNewCourseName] = useState("");
     const [showTaskCreate, setShowTaskCreate] = useState(false);
     const [loading, setLoading] = useState(true);
     const { auth } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Courses = () => {
         const fetchCourses = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/courses?teacher_id=${auth.id}`
+                    `/api/courses?teacher_id=${auth.id}`
                 );
                 const data = await response.json();
                 setCourses(data);
@@ -36,7 +37,7 @@ const Courses = () => {
         setLoading(true);
         try {
             const response = await fetch(
-                `http://localhost:5000/api/tasks?course_id=${courseId}`
+                `/api/tasks?course_id=${courseId}`
             );
             const data = await response.json();
             setTasks(data);
@@ -61,13 +62,53 @@ const Courses = () => {
     const fetchTasks = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/tasks?course_id=${selectedCourse}`);
+            const response = await fetch(`/api/tasks?course_id=${selectedCourse}`);
             const data = await response.json();
             setTasks(data); // Оновлюємо список завдань
         } catch (error) {
             console.error("Error fetching tasks:", error);
         } finally {
             setLoading(false);
+        }
+    };
+    const handleAddCourse = async () => {
+        if (!newCourseName.trim()) {
+            alert("Please enter a course name.");
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/courses", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ course_name: newCourseName, teacher_id: auth.id }),
+            });
+            if (response.ok) {
+                const newCourse = await response.json();
+                setCourses((prevCourses) => [...prevCourses, newCourse]);
+                setNewCourseName("");
+            } else {
+                console.error("Error adding course:", await response.json());
+            }
+        } catch (error) {
+            console.error("Error adding course:", error);
+        }
+    };
+
+    const handleDeleteCourse = async (courseId) => {
+        if (!window.confirm("Are you sure you want to delete this course?")) return;
+
+        try {
+            const response = await fetch(`/api/courses/${courseId}`, {
+                method: "DELETE",
+            });
+            if (response.ok) {
+                setCourses((prevCourses) => prevCourses.filter((course) => course.course_id !== courseId));
+            } else {
+                console.error("Error deleting course:", await response.json());
+            }
+        } catch (error) {
+            console.error("Error deleting course:", error);
         }
     };
 
@@ -153,19 +194,29 @@ const Courses = () => {
             ) : (
                 <>
                     <h2>Courses</h2>
+                    <div className="add-course">
+                        <input
+                            type="text"
+                            placeholder="Enter course name"
+                            value={newCourseName}
+                            onChange={(e) => setNewCourseName(e.target.value)}
+                        />
+                        <button onClick={handleAddCourse}>Add Course</button>
+                    </div>
                     <table className="courses-table">
                         <thead>
                         <tr>
                             <th>Course Name</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         {courses.map((course) => (
-                            <tr
-                                key={course.course_id}
-                                onClick={() => handleCourseClick(course.course_id)}
-                            >
-                                <td>{course.course_name}</td>
+                            <tr key={course.course_id}>
+                                <td onClick={() => handleCourseClick(course.course_id)}>{course.course_name}</td>
+                                <td>
+                                    <button onClick={() => handleDeleteCourse(course.course_id)}>Delete</button>
+                                </td>
                             </tr>
                         ))}
                         </tbody>
@@ -174,6 +225,7 @@ const Courses = () => {
             )}
         </div>
     );
+
 };
 
 export default Courses;

@@ -13,7 +13,7 @@ const TaskView = ({ courseId, onBack }) => {
         // Завантаження завдань для курсу
         const fetchTasks = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/student/tasks?course_id=${courseId}`);
+                const response = await fetch(`/api/student/tasks?course_id=${courseId}`);
                 const data = await response.json();
                 setTasks(data);
             } catch (error) {
@@ -59,7 +59,7 @@ const TaskView = ({ courseId, onBack }) => {
 
         try {
             // Відправляємо відповіді з додаванням student_id
-            const response = await fetch(`http://localhost:5000/api/student/submissions?student_id=${auth.id}`, {
+            const response = await fetch(`/api/student/submissions?student_id=${auth.id}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -74,7 +74,7 @@ const TaskView = ({ courseId, onBack }) => {
             }
 
             // Позначаємо курс завершеним
-            const completionResponse = await fetch("http://localhost:5000/api/student/complete-course", {
+            const completionResponse = await fetch("/api/student/complete-course", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

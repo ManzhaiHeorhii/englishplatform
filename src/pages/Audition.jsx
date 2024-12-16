@@ -12,7 +12,7 @@ const Audition = () => {
     useEffect(() => {
         const fetchAuditionData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/teacher/audition?teacher_id=${auth.id}`);
+                const response = await fetch(`/api/teacher/audition?teacher_id=${auth.id}`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {
